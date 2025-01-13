@@ -1,0 +1,2 @@
+./binary2bcd_tb.v
+./../hdl/binary2bcd.v
