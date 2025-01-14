@@ -32,7 +32,7 @@ task binary2bcd_software;
     reg [13:0] task_binary_in_tmp;
     reg [3:0] digit[0:3];
 
-  begin //change 
+  begin 
     task_binary_in_tmp = task_binary_in;
     for (j = 0; j < 4; j = j + 1) begin
       digit[j] = task_binary_in_tmp % 10;
