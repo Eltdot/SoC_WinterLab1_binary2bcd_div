@@ -53,14 +53,14 @@ initial begin
 
   #(CYCLE);
 
-  for(i=0; i<N; i=i+1) begin
+  for (i=0; i<N; i=i+1) begin
     testdata = i;
     binary_in = testdata;
     binary2bcd_software(testdata, packed_bcd_sw);
     
     #(CYCLE/2);
     
-    if(packed_bcd_out !== packed_bcd_sw) begin
+    if (packed_bcd_out !== packed_bcd_sw) begin
       error = error + 1;
       $display("************* Pattern No.%d is wrong at %t ************", i, $time);
       $display("Input Binary = %b, correct answer is %b, but your answer is %b !", testdata, packed_bcd_sw, packed_bcd_out);   
@@ -71,7 +71,7 @@ initial begin
   end
   $fclose(fp_w);
 
-  if(error == 0) begin
+  if (error == 0) begin
     $display("Your binary2bcd is correct!!");
   end else begin
     $display("error !!");
